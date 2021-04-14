@@ -1,0 +1,57 @@
+<mat-toolbar>
+    <span>Registration</span>
+</mat-toolbar>
+<mat-card class="my-card">
+    <mat-card-content>
+        <div>
+            <span *ngIf="invalidRegister" class='error-message'>{{ errorMessage }}</span>
+        </div>
+        <!-- <span *ngIf='!this.flag' class="error-message">{{alertMessage}}</span> -->
+        <form class="my-form" #userData='ngForm' (ngSubmit)='register(userData)'>
+            <mat-radio-group aria-label="Select an option" class="full-width">
+                <input type="radio" name="userType" value="admin" ngModel required />Admin
+                <input type="radio" name="userType" value="user" ngModel required />User
+            </mat-radio-group>
+            <mat-form-field class="full-width">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="First Name" name="firstName" minlength="3" required [(ngModel)]='firstName'>
+
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Last Name" name="lastName" minlength="3" required [(ngModel)]='lastName'>
+
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]='email' required>
+            </mat-form-field>
+            <div>
+                <span *ngIf="invalidRegister2" class='error-message'>{{ alertMessage }}</span>
+            </div>
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput [type]="hide1 ? 'password' : 'text'" placeholder="Password" name="password" minlength="6" required [(ngModel)]='password'>
+                <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+                    <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput [type]="hide2 ? 'password' : 'text'" placeholder="Password" name="cPassword" required [(ngModel)]='cPassword'>
+
+                <!-- <span *ngIf="invalidRegister" class="help-block">{{ errorMessage }}</span> -->
+                <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
+                    <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+            </mat-form-field>
+            <div>
+                <span *ngIf="invalidRegister1" class='error-message'>{{ alertMessage }}</span>
+            </div>
+            <mat-card-actions>
+                <button mat-raised-button>REGISTER</button>
+            </mat-card-actions>
+            <br><br>
+        </form>
+    </mat-card-content>
+</mat-card>

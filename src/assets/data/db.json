@@ -1,0 +1,34 @@
+{
+    "posts": [{
+            "userType": "user",
+            "firstName": "Dinesh",
+            "lastName": "Chavda",
+            "email": "dc@mail.com",
+            "password": "dinesh123",
+            "cPassword": "dinesh123",
+            "id": 5
+        },
+        {
+            "userType": "user",
+            "firstName": "Yash",
+            "lastName": "Goyani",
+            "email": "yashgoyani101@gmail.com",
+            "password": "yash123",
+            "cPassword": "yash123",
+            "id": 10
+        },
+        {
+            "userType": "user",
+            "firstName": "Jay",
+            "lastName": "Pansuriya",
+            "email": "jd@gmail.com",
+            "password": "jay123",
+            "cPassword": "jay123",
+            "id": 13
+        }
+    ],
+    "comments": [],
+    "profile": {
+        "name": "typicode"
+    }
+}

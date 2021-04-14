@@ -1,0 +1,19 @@
+table {
+    width: 100%;
+}
+
+.mat-row.hovered {
+    background: #eee;
+}
+
+.mat-row.highlighted {
+    background: lightgrey;
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+button {
+    margin: 16px 8px;
+}

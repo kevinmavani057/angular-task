@@ -1,0 +1,28 @@
+mat-toolbar {
+    background-color: black;
+    color: lightgrey;
+}
+
+button.logout {
+    color: lightgrey;
+    background-color: black;
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+    // margin-left: 75%;
+}
+
+button.logout:hover {
+    color: black;
+    background-color: lightgrey;
+}
+
+a {
+    text-align: center;
+    max-width: 80%;
+}
+
+p {
+    margin-left: 60%;
+    margin-top: 10px
+}

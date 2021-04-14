@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-card-content>
+
+        <form class="my-form" #userData='ngForm' (ngSubmit)='update(userData)'>
+
+            <mat-form-field class="full-width">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="First Name" name="firstName" minlength="3" required [(ngModel)]='firstName'>
+
+            </mat-form-field>
+            <br>
+            <mat-form-field class="full-width">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Last Name" name="lastName" minlength="3" required [(ngModel)]='lastName'>
+
+            </mat-form-field>
+            <br>
+            <mat-form-field class="full-width">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]='email' required>
+
+            </mat-form-field>
+
+            <mat-card-actions>
+                <button mat-raised-button>Update</button>
+            </mat-card-actions>
+            <br><br>
+        </form>
+    </mat-card-content>
+</mat-card>
