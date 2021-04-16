@@ -9,10 +9,8 @@ import { ServiceService } from './service.service';
 })
 export class TokenInterceptorService implements HttpInterceptor{
 
-  constructor(private injector: Injector, private service: ServiceService) { } 
+  constructor( private service: ServiceService) { } 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
-    // let service = this.injector.get(ServiceService);
-    // console.log(this.service.getToken());
     let tokenReq= req.clone({
       headers: req.headers.set('token',`${this.service.getToken()}`)  
       

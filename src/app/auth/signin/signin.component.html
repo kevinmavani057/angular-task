@@ -4,9 +4,7 @@
 <mat-card class="my-card">
     <mat-card-content>
         <form class="my-form" #user='ngForm' (ngSubmit)='login(user)'>
-            <!-- <form class="my-form"> -->
             <span *ngIf="infoMessage.length > 0" class="success">{{ infoMessage }}</span>
-
             <mat-form-field class="full-width">
                 <mat-label>Email</mat-label>
                 <input matInput placeholder="Email" type="email" name="email" ngModel required>

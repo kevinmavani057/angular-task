@@ -3,8 +3,26 @@ mat-toolbar {
     color: lightgrey;
 }
 
-.logout {
+button.logout {
+    color: lightgrey;
+    background-color: black;
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+    // margin-left: 75%;
+}
+
+button.logout:hover {
     color: black;
     background-color: lightgrey;
-    margin-left: 65%;
+}
+
+a {
+    text-align: center;
+    max-width: 80%;
+}
+
+p {
+    margin-left: 60%;
+    margin-top: 14px
 }

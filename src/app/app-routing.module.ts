@@ -21,14 +21,6 @@ const routes: Routes = [
     redirectTo:'/auth/register',
     pathMatch: 'full'
   }
-  // {
-  //   path: 'user/user-listing',
-  //   component: UserListingComponent
-  // },
-  // {
-  //   path: 'admin/admin-listing',
-  //   component: AdminListingComponent
-  // }
 ];
 
 @NgModule({

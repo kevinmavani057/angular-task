@@ -10,11 +10,8 @@ import { ServiceService } from 'src/app/service.service';
 export class UserDashboardComponent implements OnInit {
 
   constructor(public service: ServiceService, private router: Router) { }
-  // userName: string='';
-  ngOnInit(): void {
-    // this.service.firstName =localStorage.getItem('firstName');
-   
-  }
+
+  ngOnInit(): void {}
   logout(){
     localStorage.removeItem('token');
     localStorage.removeItem('firstName');

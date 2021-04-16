@@ -18,12 +18,7 @@ const routes: Routes = [
             path: 'user-listing',
             component: UserListingComponent
         },
-        // {
-        //     path: '',
-        //     redirectTo: 'user-profile',
-        //     pathMatch: 'full'
-        // }
-    ]
+            ]
     }
 ];
 

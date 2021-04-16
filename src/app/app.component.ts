@@ -9,5 +9,4 @@ import { ServiceService } from './service.service';
 export class AppComponent {
   title = 'my-project';
   constructor(public service: ServiceService){}
-  // flag:boolean=this.service.isloggedIn;
 }

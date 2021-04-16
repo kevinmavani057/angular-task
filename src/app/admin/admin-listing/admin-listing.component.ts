@@ -13,7 +13,6 @@ export interface userDetail {
   firstName: string;
   lastName: string;
   email: string;
-
 }
 @Component({
   selector: 'app-admin-listing',
@@ -38,25 +37,16 @@ export class AdminListingComponent implements OnInit {
       this.selection = new SelectionModel<userDetail>(false, []);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-    }
-
-    );
-
+    });
   }
-  editUser(id: number) {
-    // this.router.navigate([`edit/${id}`]);
-   
-  }
-  deleteUser(id: number) {
+   deleteUser(id: number) {
     const dialogRef = this.dialog.open(DialogboxComponent);
-
     dialogRef.afterClosed().subscribe((result: any) => {
       if (result) {
         this.service.deleteUser(id).subscribe((res) => {
           console.log(res);
           setTimeout(() => { this.ngOnInit(); }, 1000);
         });
-
       }
     });
   }

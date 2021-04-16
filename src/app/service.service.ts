@@ -6,14 +6,9 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ServiceService {
-  // isloggedIn:boolean=true;
   visible: boolean;
-  // firstName: string | undefined;
-  // lastName: string = '';
-  // email: string = '';
   userType: string = '';
-  // hideNav: boolean=true;
-  // islogIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  showUserProfile:boolean = false;
   constructor(private http: HttpClient) { this.visible = true }
   url = 'http://localhost:8000';
   createUser(user: any) {
@@ -28,8 +23,8 @@ export class ServiceService {
   deleteUser(id: number) {
     return this.http.delete(`${this.url}/users/${id}`);
   }
-  updateUser(user: any){
-    return this.http.put(`${this.url}/profile`, user);
+  updateUser(user: any) {
+    return this.http.put(`${this.url}/user/edit`, user);
   }
   getFirstName() {
     return localStorage.getItem('firstName');

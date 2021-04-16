@@ -140,8 +140,8 @@ server.put('/user/edit', (req, res) => {
     console.log("edit user endpoint called; request body:");
     console.log(req.body);
     req.body.userrole = '2';
-    const { username, id } = req.body;
-
+    const { email, id } = req.body;
+    console.log(id);
     fs.readFile("./users.json", (err, data) => {
         if (err) {
             const status = 401
@@ -152,10 +152,10 @@ server.put('/user/edit', (req, res) => {
 
         var data = JSON.parse(data.toString());
 
-        const checkUser = data.users.find(user => user.username === username && user.id !== id);
+        const checkUser = data.users.find(user => user.email === email && user.id !== id);
         if (checkUser) {
             const status = 400;
-            const message = 'Username already exist';
+            const message = 'Email already exist';
             res.status(status).json({ status, message });
             return
         }

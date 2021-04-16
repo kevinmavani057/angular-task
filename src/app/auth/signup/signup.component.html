@@ -6,7 +6,6 @@
         <div>
             <span *ngIf="invalidRegister" class='error-message'>{{ errorMessage }}</span>
         </div>
-        <!-- <span *ngIf='!this.flag' class="error-message">{{alertMessage}}</span> -->
         <form class="my-form" #userData='ngForm' (ngSubmit)='register(userData)'>
             <mat-radio-group aria-label="Select an option" class="full-width">
                 <input type="radio" name="userType" value="admin" ngModel required />Admin
@@ -39,8 +38,7 @@
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Confirm Password</mat-label>
                 <input matInput [type]="hide2 ? 'password' : 'text'" placeholder="Password" name="cPassword" required [(ngModel)]='cPassword'>
-
-                <!-- <span *ngIf="invalidRegister" class="help-block">{{ errorMessage }}</span> -->
+                <span *ngIf="invalidRegister" class="help-block">{{ errorMessage }}</span> -->
                 <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
                     <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>

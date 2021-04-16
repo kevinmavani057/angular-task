@@ -22,11 +22,6 @@ const routes: Routes = [
       component: EditUserComponent}]
     },
     
-    {
-      path: '',
-      redirectTo: 'admin-profile',
-      pathMatch:'full'
-    }
     ]
   }
 ];

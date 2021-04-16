@@ -1,14 +1,11 @@
 <mat-toolbar>
-    <a mat-button routerLink="./user-listing">User List</a>
-    <a mat-button routerLink="./user-profile">User Profile</a>
+    <a mat-button routerLink="./user-listing" (click)='service.showUserProfile=false'>User List</a>
+    <a mat-button routerLink="./user-profile" *ngIf='service.showUserProfile'>User Profile</a>
     <p>{{service.getFirstName()}} {{service.getLastName()}}</p>
     <button mat-button [matMenuTriggerFor]="beforeMenu"><mat-icon>home</mat-icon></button>
     <mat-menu #beforeMenu="matMenu" xPosition="before">
-        <a mat-menu-item routerLink='user-profile'>Profile</a>
-        <!-- <hr> -->
+        <a mat-menu-item routerLink='user-profile' (click)='service.showUserProfile=true'>Profile</a>
         <button mat-menu-item (click)='logout()' class="logout">Logout</button>
     </mat-menu>
-    <!-- <a mat-raised-button>Logout</a> -->
-
 </mat-toolbar>
 <router-outlet></router-outlet>

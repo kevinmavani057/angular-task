@@ -19,6 +19,9 @@ export class EditUserComponent implements OnInit {
   ngOnInit(): void {
   }
   update(user: NgForm){
-    this.service.updateUser(user).subscribe();
+    this.service.updateUser(user.value).subscribe(res=>{
+      console.log(res);
+      
+    });
   }
 }
