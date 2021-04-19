@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { ServiceService } from 'src/app/service.service';
+import { Service } from 'src/app/service';
 
 export interface userDetail {
   firstName: string;
@@ -19,7 +19,7 @@ export interface userDetail {
 export class UserListingComponent implements OnInit {
   selection!: SelectionModel<userDetail>;
 
-  constructor(private service: ServiceService) { }
+  constructor(private service: Service) { }
   displayedColumns: string[] = ['firstName', 'lastName', 'email'];
   dataSource!: MatTableDataSource<userDetail>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;

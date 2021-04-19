@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServiceService } from 'src/app/service.service';
+import { Service } from 'src/app/service';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -9,7 +9,10 @@ import { ServiceService } from 'src/app/service.service';
 })
 export class UserDashboardComponent implements OnInit {
 
-  constructor(public service: ServiceService, private router: Router) { }
+  constructor(private service: Service, private router: Router) { }
+  firstName = this.service.getFirstName();
+  lastName = this.service.getLastName();
+  email = this.service.getEmail();
 
   ngOnInit(): void {}
   logout(){

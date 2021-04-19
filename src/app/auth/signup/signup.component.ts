@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ServiceService } from 'src/app/service.service';
+import { Service} from 'src/app/service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,7 +25,7 @@ export class SignupComponent implements OnInit {
   usersData: any;
 
   alertMessage: string = '';
-  constructor(private service: ServiceService, private router: Router, private http: HttpClientModule) { }
+  constructor(private service: Service, private router: Router, private http: HttpClientModule) { }
   ngOnInit(): void {
     if (this.service.isloggedIn()) {
       this.router.navigate(['user']);

@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import * as CryptoJS from 'crypto-js';
-import { ServiceService } from 'src/app/service.service';
+
+import { Service } from 'src/app/service';
 
 @Component({
   selector: 'app-signin',
@@ -11,7 +11,7 @@ import { ServiceService } from 'src/app/service.service';
 })
 export class SigninComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router, private service: ServiceService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private service: Service) { }
   infoMessage = '';
   users: any;
   errorMessage: string | undefined;
@@ -31,9 +31,9 @@ export class SigninComponent implements OnInit {
   }
   login(user: NgForm) {
 
-    this.service.createUser1(user.value).subscribe((res: any) => {
+    this.service.login(user.value).subscribe((res: any) => {
       console.log(res);
-      localStorage.setItem('token', encryptToken(res.token));
+      localStorage.setItem('token', this.service.encryptToken(res.token));
       localStorage.setItem('firstName', res.user.firstName);
       localStorage.setItem('lastName', res.user.lastName);
       localStorage.setItem('email', res.user.email);
@@ -50,14 +50,5 @@ export class SigninComponent implements OnInit {
     )
   }
 }
-function encryptToken(token: string): string {
-  const secretKey = '123456789'
-  try {
-    return CryptoJS.AES.encrypt(JSON.stringify(token), secretKey).toString();
-  } catch (e) {
-    console.log(e);
-    return e;
-  }
 
-}
 

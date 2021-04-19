@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ServiceService } from 'src/app/service.service';
+import { Service } from 'src/app/service';
 
 @Component({
   selector: 'app-edit-user',
@@ -9,11 +9,9 @@ import { ServiceService } from 'src/app/service.service';
 })
 export class EditUserComponent implements OnInit {
 
-  constructor(private service: ServiceService) { }
+  constructor(private service: Service) { }
   firstName: string = '';
   lastName: string = '';
-  password: string | number = '';
-  cPassword: string | number = '';
   email: string = '';
 
   ngOnInit(): void {

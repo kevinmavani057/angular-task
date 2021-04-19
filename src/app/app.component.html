@@ -1,4 +1,4 @@
-<mat-toolbar *ngIf='!service.isloggedIn()'>
+<mat-toolbar *ngIf='!isLoggedIn'>
     <mat-toolbar-row>
         <a mat-button routerLink="auth/register">Register</a>
         <a mat-button routerLink="auth/login">Login</a>

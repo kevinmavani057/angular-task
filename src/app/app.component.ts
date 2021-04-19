@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ServiceService } from './service.service';
+import { Service } from './service';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +8,7 @@ import { ServiceService } from './service.service';
 })
 export class AppComponent {
   title = 'my-project';
-  constructor(public service: ServiceService){}
+  constructor(private service: Service){}
+  isLoggedIn: boolean = this.service.isloggedIn();
+  
 }

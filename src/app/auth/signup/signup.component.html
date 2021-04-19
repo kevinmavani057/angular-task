@@ -38,7 +38,6 @@
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Confirm Password</mat-label>
                 <input matInput [type]="hide2 ? 'password' : 'text'" placeholder="Password" name="cPassword" required [(ngModel)]='cPassword'>
-                <span *ngIf="invalidRegister" class="help-block">{{ errorMessage }}</span> -->
                 <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
                     <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>

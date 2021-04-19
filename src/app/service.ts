@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
-
+// import { BehaviorSubject } from 'rxjs';
+import * as CryptoJS from 'crypto-js';
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceService {
+export class Service {
   visible: boolean;
   userType: string = '';
   showUserProfile:boolean = false;
@@ -14,7 +14,7 @@ export class ServiceService {
   createUser(user: any) {
     return this.http.post(`${this.url}/users`, user);
   }
-  createUser1(user: any) {
+  login(user: any) {
     return this.http.post(`${this.url}/auth/login`, user);
   }
   getUserDetail() {
@@ -40,5 +40,15 @@ export class ServiceService {
   }
   getToken() {
     return localStorage.getItem('token');
+  }
+  encryptToken(token: string): string {
+    const secretKey = '123456789'
+    try {
+      return CryptoJS.AES.encrypt(JSON.stringify(token), secretKey).toString();
+    } catch (e) {
+      console.log(e);
+      return e;
+    }
+  
   }
 }
