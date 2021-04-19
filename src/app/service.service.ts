@@ -14,7 +14,7 @@ export class ServiceService {
   createUser(user: any) {
     return this.http.post(`${this.url}/users`, user);
   }
-  createUser1(user: any) {
+  login(user: any) {
     return this.http.post(`${this.url}/auth/login`, user);
   }
   getUserDetail() {
