@@ -31,7 +31,7 @@ export class SigninComponent implements OnInit {
   }
   login(user: NgForm) {
 
-    this.service.createUser1(user.value).subscribe((res: any) => {
+    this.service.login(user.value).subscribe((res: any) => {
       console.log(res);
       localStorage.setItem('token', encryptToken(res.token));
       localStorage.setItem('firstName', res.user.firstName);
