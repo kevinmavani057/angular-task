@@ -41,6 +41,7 @@ export class Service {
   getToken() {
     return localStorage.getItem('token');
   }
+  
   encryptToken(token: string): string {
     const secretKey = '123456789'
     try {

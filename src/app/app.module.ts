@@ -18,7 +18,7 @@ import { SharedmoduleModule } from './sharedmodule/sharedmodule.module';
     DialogboxComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     AuthModule,
     BrowserAnimationsModule,
